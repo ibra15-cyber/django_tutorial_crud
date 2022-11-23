@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% comment %} <h1> In App Template: {{object.title}} </h1>
+    <p> {% if object.description != None and object.description != '' %} {{object.description}} {% else %} coming soon {% endif %}</p> {% endcomment %}
+
+   <h1> title: {{object.title}} </h1><br>
+   <h3> id: {{object.id}} </h3> <br>
+    description: {{object.description}} <br>
+    price: {{object.price}}
+   
+        {% comment %} form to click submit to handle it to delete page {% endcomment %} 
+        {% comment %} the first uses href to get the other buttons
+        and the last uses other forms to achiev the same {% endcomment %}
+    <form action="{{object.id}}/delete" method="GET">{% csrf_token %}
+        {% comment %} <h1> do you want to delete item {{object.id}} </h1> {% endcomment %}
+        <input type="submit" value="delete" /> <a href="../modify/{{object.id}}">Modify<a> <a href="../">Go back</a>
+    </form>
+
+    <form action="../modify/{{object.id}}" method="GET">{% csrf_token %}
+        {% comment %} <h1> do you want to delete item {{object.id}} </h1> {% endcomment %}
+        <input type="submit" value="modify" />
+    </form>
+
+    <form action="../" method="GET">{% csrf_token %}
+        {% comment %} <h1> do you want to delete item {{object.id}} </h1> {% endcomment %}
+        <input type="submit" value="go back" />
+    </form>
+
+    {% endblock %}

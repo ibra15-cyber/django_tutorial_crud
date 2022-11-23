@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    {% comment %} raw html {% endcomment %}
+    {% comment %} by default if you dont state the method is get {% endcomment %}
+    {% comment %} when i submit my input, send it to action
+     {% endcomment %}
+     {% comment %} action="." means the current url that we got the below from {% endcomment %}
+    <form action="google.com/search" method="GET"> 
+        <input type='text' name='title' placeholder="Enter your search to google"/>
+        <input type="submit" value="search" />
+    </form>
+    <br>
+    <h3>GET you back the input in a terminal set in view </h3>
+    <form action="../../../" method="POST"> {%csrf_token%}
+        <input type='text' name='title' placeholder="Enter your text"/>
+        <input type="submit" value="save" />
+    </form> 
+{% endblock %}

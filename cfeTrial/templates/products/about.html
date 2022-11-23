@@ -1,0 +1,37 @@
+{% extends "base.html"%}
+
+{% block content %}
+    <h1>Hello World</h1>
+    <p>This is about template</p>
+    {% comment %} {{ my_text | capfirst }}1 {% endcomment %}
+   {% comment %} <h1> {{ my_text | center:"5" }} </h1> {% endcomment %}
+   <h1> {{ my_text | upper }} </h1>
+   <h1> {{my_html | safe }} 
+
+<p>
+    {{ my_text }},
+    {{ my_num}},
+    {{ my_list }}
+</p>
+
+<ul>
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+</ul>
+
+<ul>
+{% for item in my_list%}
+    {% if item == 123 %}
+        <li>{{forloop.counter}} - {{item | add:22 }}</li>
+    {% elif item == "Abc" %}    
+        <li>this is a network </li>
+    {%else%}
+        <li>{{forloop.counter}} - {{item}}</li>
+    {%endif%}
+    
+{% endfor %}
+</ul>
+
+
+{% endblock%}

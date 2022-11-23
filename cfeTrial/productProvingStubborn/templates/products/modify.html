@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    <form method="POST" action=''>  {% csrf_token %}
+        {{form.as_p}}
+        <input type='Submit' value="Save">
+        {% comment %} after saving and it goes; we will need a redirect not action {% endcomment %}
+        {% comment %} passing a url in the action takes you to that url but it expects the abosolute inlink to include the 
+        one that got you here {% endcomment %}
+    </form>
+{% endblock %}

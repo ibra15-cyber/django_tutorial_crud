@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="createf/" method="GET">{% csrf_token %}
+    {% comment %} <h1> do you want to delete item {{object.id}} </h1> {% endcomment %}
+    <input type="submit" value="create" /> 
+</form>
+
+{% for item in obj %}
+    <p><a href='{{ item.get_absolute_url }}'> {{item.title}}</a></p>
+    {{item.id}}
+ {% comment %} product detail is at product/<int:id> so to redirect after a click
+ you edit with product and the particular id which we got item.id;
+ but as a variable not <int:id> {% endcomment %}
+{% endfor %}
+        
+{% endblock %} 

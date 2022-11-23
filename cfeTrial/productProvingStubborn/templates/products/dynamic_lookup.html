@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>list products</p>
+    {% comment %} <form method="POST" action='.'>  {% csrf_token %} {% endcomment %}
+      <p><a href="">  {{obj.title}} </a></p>
+      {% comment %} . goes to product/ which we set to load detail_view {% endcomment %}
+    {% comment %} </form> {% endcomment %}
+{% endblock %}

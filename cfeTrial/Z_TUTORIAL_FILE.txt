@@ -1,0 +1,21 @@
+print(BASE_DIR) #PRINTS THE CURRENT DIRECTORY TO HELP WITH SETTINGS
+'DIRS': [BASE_DIR / 'templates'] for templates
+STATIC_URL = [BASE_DIR / 'static/']
+turn DEBUG=False after deployed
+will reactify this in the pythonware file when i get network
+
+so we got three ways of accessing a page
+1. going through the url as in listing items 127.0.0.1:8000
+2. on submit we use action to direct us; this will continue from the current url; as in forwarding post or get to a lin
+action=""
+3. in htm on click can go anywhere ; as in taking you to details page
+<a href="product/{{obj.id}}">{{obj.title}}
+4. redirect after everything is done as in delete; or modify
+return render("../../)
+
+action can take you back and forward;
+href and redirect will do same
+
+
+an anchor tag could replace a button
+redirect can
